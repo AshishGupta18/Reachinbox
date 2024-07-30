@@ -1,21 +1,22 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function RedirectHandler() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const token = params.get('token');
+  React.useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const token = queryParams.get('token');
 
     if (token) {
-      localStorage.setItem('jwtToken', token);
-      // Redirect to the desired page after storing the token
-      history.push('/');
+      localStorage.setItem('jwt', token);
+      navigate('/dashboard');
+    } else {
+      navigate('/');
     }
-  }, [history]);
+  }, [navigate]);
 
-  return <div>Loading...</div>;
+  return <div>Redirecting...</div>;
 }
 
 export default RedirectHandler;

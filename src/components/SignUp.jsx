@@ -1,11 +1,27 @@
 import React from 'react';
 
+import { useNavigate } from 'react-router-dom';
+// function SignUp() {
+//   const handleGoogleSignIn = () => {
+//     window.location.href = 'https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:3000/auth/callback';
+//   };
+
+// function SignUp() {
+//   const navigate = useNavigate();
+//   const handleGoogleSignIn = () => {
+//     const redirectUrl = 'https://frontend.com';
+//     const googleSignInUrl = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${encodeURIComponent(redirectUrl)}`;
+//     window.location.href = googleSignInUrl;
+//   };
+
 function SignUp() {
+  const navigate = useNavigate();
   const handleGoogleSignIn = () => {
-    const redirectUrl = 'https://frontend.com';
+    const redirectUrl = 'http://localhost:5173/dashboard';
     const googleSignInUrl = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${encodeURIComponent(redirectUrl)}`;
     window.location.href = googleSignInUrl;
   };
+
 
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center">
@@ -28,7 +44,7 @@ function SignUp() {
             Sign Up with Google
           </button>
         </div>
-        <div className="relative mt-6">
+        <div className="relative mt-6"> . . . 
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-700"></div>
           </div>
@@ -43,14 +59,17 @@ function SignUp() {
           <div>
             <button
               type="submit"
+             
               className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              
             >
               Create an Account
             </button>
           </div>
         </div>
         <div className="text-center">
-          <p className="mt-2 text-gray-500">Already have an account? <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">Sign In</a></p>
+          <p className="mt-2 text-gray-500">Already have an account? <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"
+          >Sign In</a></p>
         </div>
       </div>
     </div>
