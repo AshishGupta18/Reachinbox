@@ -1,4 +1,3 @@
-// src/components/CustomEditor.jsx
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactQuill from 'react-quill';
@@ -35,8 +34,8 @@ function CustomEditor() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-800 text-white p-8 flex flex-col items-center">
-      <div className="w-full max-w-4xl bg-gray-900 p-8 rounded-lg shadow-lg">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white p-8 flex flex-col items-center">
+      <div className="w-full max-w-4xl bg-gray-200 dark:bg-gray-800 p-8 rounded-lg shadow-lg">
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="to">To</label>
           <input
@@ -44,7 +43,7 @@ function CustomEditor() {
             type="email"
             value={to}
             onChange={(e) => setTo(e.target.value)}
-            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
+            className="w-full p-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
           />
         </div>
         <div className="mb-4">
@@ -54,7 +53,7 @@ function CustomEditor() {
             type="email"
             value={from}
             onChange={(e) => setFrom(e.target.value)}
-            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
+            className="w-full p-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
           />
         </div>
         <div className="mb-4">
@@ -64,36 +63,24 @@ function CustomEditor() {
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            className="w-full p-2 border border-gray-700 rounded bg-gray-800 text-white"
+            className="w-full p-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">Body</label>
-          <div className="border border-gray-700 rounded">
-            <ReactQuill
-              value={editorState}
-              onChange={setEditorState}
-              className="bg-gray-800 text-white rounded"
-              theme="snow"
-            />
-          </div>
+          <ReactQuill value={editorState} onChange={setEditorState} />
         </div>
-        <div className="flex justify-end space-x-4">
+        <div className="flex justify-between">
           <button
             onClick={handleSend}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             Send
           </button>
-          <button
-            className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
-          >
+          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
             Variables
           </button>
-          <button
-            className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
-          >
-            Save
+          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            Preview Email
           </button>
         </div>
       </div>
