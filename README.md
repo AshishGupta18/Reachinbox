@@ -36,7 +36,7 @@ This project is a React-based dashboard application that includes various featur
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/AshishGupta18/your-repo.git
    cd your-repo
    ```
 
